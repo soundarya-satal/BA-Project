@@ -1,4 +1,4 @@
-# Dataset Documentation: TMDB Movies (2000 to 2025)
+﻿# Dataset Documentation: TMDB Movies (2000 to 2025)
 
 Project: Movie Performance Analysis and Prediction Using TMDB Data
 Course: 23CSE452 Business Analytics
@@ -148,7 +148,7 @@ Feature sets used for modelling (built in the notebook, not saved as files):
 |----|-------|--------------|-------------------|----------|-----------|--------------|-----------|--------|--------------|-----------|
 | 159627 | Ground Zero | 2000-05-12 | en | When a series of tremors rocks Los Angeles, se... | 1.6756 | 4.1 | 13 | Drama, Action | 2000 | True |
 | 28085 | Blind Target | 2000-01-01 | en | A popular American novelist, who has written h... | 1.7006 | 3.4 | 11 | Thriller, Drama | 2000 | True |
-| 60074 | La Squale | 2000-11-29 | fr | Désirée, a black girl, is nicknamed "The Shark... | 1.8364 | 6.1 | 16 | Drama | 2000 | True |
+| 60074 | La Squale | 2000-11-29 | fr | DÃ©sirÃ©e, a black girl, is nicknamed "The Shark... | 1.8364 | 6.1 | 16 | Drama | 2000 | True |
 
 ## 10. Known limitations and biases
 
@@ -169,3 +169,14 @@ Feature sets used for modelling (built in the notebook, not saved as files):
 ## 12. Terms of use and attribution
 
 Data comes from TMDB and is used here for academic purposes only. This product uses the TMDB API but is not endorsed or certified by TMDB. The dataset contains no personal data.
+
+
+## Derived / Engineered Columns
+| Column | Type | Description |
+|--------|------|-------------|
+| sales_lag_7 | float | 7-day lagged sales value |
+| sales_roll_mean_7 | float | 7-day rolling average |
+| day_of_week | int | 0=Monday to 6=Sunday |
+| is_weekend | int | 1 if Sat/Sun else 0 |
+| sentiment_polarity | float | TextBlob polarity score (-1 to 1) |
+
