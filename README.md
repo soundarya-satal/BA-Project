@@ -140,8 +140,7 @@ The text-mining workflow is implemented in [`notebooks/TextMining.ipynb`](notebo
    - **Love and family**
    - **Work, power and adult life**
    - **Crime and murder**
-5. **Compares topics with movie performance and context.** Topic-level ratings differ significantly (Kruskal-Wallis `p = 8.55e-25`), as do high-rated shares (chi-square `p = 1.56e-21`). Topic prevalence is also tracked by genre and release year.
-6. **Measures overview sentiment** with TextBlob polarity (`-1` to `+1`) and subjectivity (`0` to `1`). Polarity has only a weak positive relationship with rating (Spearman `r = 0.083`), while subjectivity has a very weak negative relationship (`r = -0.035`). These scores describe the tone of the plot description, not audience opinion.
+5. **Measures overview sentiment** with TextBlob polarity (`-1` to `+1`) and subjectivity (`0` to `1`). Polarity has only a weak positive relationship with rating (Spearman `r = 0.083`), while subjectivity has a very weak negative relationship (`r = -0.035`). These scores describe the tone of the plot description, not audience opinion.
 
 The text features are used primarily for interpretation and dashboard exploration. They are not treated as causal evidence, and the separate TF-IDF modelling experiment did not improve the main structured-data prediction model.
 
