@@ -1,4 +1,4 @@
-﻿# CinePredict: TMDB Movie Performance Analytics
+# CinePredict: TMDB Movie Performance Analytics
 
 An end-to-end business analytics project that investigates which movie characteristics are associated with stronger audience ratings. The project combines TMDB data collection, data preparation, exploratory analysis, predictive modelling, time-series analysis, text mining, and an interactive Streamlit dashboard.
 
@@ -65,7 +65,7 @@ The dataset was collected from the [TMDB API](https://developer.themoviedb.org/)
 | Raw movie data | 15,555 rows | Collected TMDB records before cleaning |
 | Clean movie data | 15,386 rows | Analysis-ready catalogue |
 | Modelling data | 10,078 rows | Clean movies with at least 20 votes |
-| Release period | 2000â€“2025 | Analysis window |
+| Release period | 2000–2025 | Analysis window |
 | Languages | 89 | Original-language coverage |
 | Genres | 19 | Genre coverage |
 
@@ -168,39 +168,39 @@ The notebook's plotting helper saves figures to `reports/figures/text/` with nam
 
 ```text
 BA-Project/
-â”œâ”€â”€ dashboard/
-â”‚   â””â”€â”€ app.py                         # Streamlit dashboard
-â”œâ”€â”€ data/
-â”‚   â”œâ”€â”€ raw/
-â”‚   â”‚   â”œâ”€â”€ tmdb_raw.csv              # Raw collected movie records
-â”‚   â”‚   â””â”€â”€ checkpoint.json            # Collection checkpoint
-â”‚   â”œâ”€â”€ processed/
-â”‚   â”‚   â”œâ”€â”€ tmdb_clean.csv             # Clean analysis dataset
-â”‚   â”‚   â”œâ”€â”€ tmdb_model.csv             # Modelling dataset
-â”‚   â”‚   â””â”€â”€ *.png                      # Analysis figures
-â”‚   â”œâ”€â”€ text/
-â”‚   â”‚   â”œâ”€â”€ text_movie_level.csv       # Movie-level text features
-â”‚   â”‚   â”œâ”€â”€ topics_summary.csv         # Topic descriptions
-â”‚   â”‚   â”œâ”€â”€ terms_association.csv      # Term-rating associations
-â”‚   â”‚   â””â”€â”€ *.csv                      # Text-mining outputs
-â”‚   â””â”€â”€ ts/
-â”‚       â”œâ”€â”€ monthly_series.csv         # Monthly performance series
-â”‚       â”œâ”€â”€ forecast.csv                # Forecast values and intervals
-â”‚       â””â”€â”€ *.csv                      # Time-series outputs
-â”œâ”€â”€ models/
-â”‚   â”œâ”€â”€ RandForest_A.pkl               # Content-only Random Forest
-â”‚   â”œâ”€â”€ RandForest_B.pkl               # Content + engagement Random Forest
-â”‚   â”œâ”€â”€ XGBoost_A.pkl                  # Content-only XGBoost
-â”‚   â””â”€â”€ XGBoost_B.pkl                  # Content + engagement XGBoost
-â”œâ”€â”€ notebooks/
-â”‚   â”œâ”€â”€ EDA.ipynb
-â”‚   â”œâ”€â”€ Feature_Engineering.ipynb
-â”‚   â”œâ”€â”€ TextMining.ipynb              # Text-mining workflow
-â”‚   â””â”€â”€ TimeSeries.ipynb              # Time-series workflow
-â”œâ”€â”€ notebook.ipynb                     # Main analysis notebook
-â”œâ”€â”€ DATA_DICTIONARY.md
-â”œâ”€â”€ Data Documentation Report.docx
-â””â”€â”€ README.md
+├── dashboard/
+│   └── app.py                         # Streamlit dashboard
+├── data/
+│   ├── raw/
+│   │   ├── tmdb_raw.csv              # Raw collected movie records
+│   │   └── checkpoint.json            # Collection checkpoint
+│   ├── processed/
+│   │   ├── tmdb_clean.csv             # Clean analysis dataset
+│   │   ├── tmdb_model.csv             # Modelling dataset
+│   │   └── *.png                      # Analysis figures
+│   ├── text/
+│   │   ├── text_movie_level.csv       # Movie-level text features
+│   │   ├── topics_summary.csv         # Topic descriptions
+│   │   ├── terms_association.csv      # Term-rating associations
+│   │   └── *.csv                      # Text-mining outputs
+│   └── ts/
+│       ├── monthly_series.csv         # Monthly performance series
+│       ├── forecast.csv                # Forecast values and intervals
+│       └── *.csv                      # Time-series outputs
+├── models/
+│   ├── RandForest_A.pkl               # Content-only Random Forest
+│   ├── RandForest_B.pkl               # Content + engagement Random Forest
+│   ├── XGBoost_A.pkl                  # Content-only XGBoost
+│   └── XGBoost_B.pkl                  # Content + engagement XGBoost
+├── notebooks/
+│   ├── EDA.ipynb
+│   ├── Feature_Engineering.ipynb
+│   ├── TextMining.ipynb              # Text-mining workflow
+│   └── TimeSeries.ipynb              # Time-series workflow
+├── notebook.ipynb                     # Main analysis notebook
+├── DATA_DICTIONARY.md
+├── Data Documentation Report.docx
+└── README.md
 ```
 
 ## Installation
@@ -247,11 +247,11 @@ jupyter notebook
 
 Run the notebooks in the following order when rebuilding the analysis from raw data:
 
-1. `notebook.ipynb` â€” collect and clean the TMDB data and build the modelling dataset
-2. `notebooks/EDA.ipynb` â€” exploratory analysis
-3. `notebooks/Feature_Engineering.ipynb` â€” structured and TF-IDF features plus baseline results
-4. `notebooks/TimeSeries.ipynb` â€” time-series outputs
-5. `notebooks/TextMining.ipynb` or `notebooks/Text_Mining.ipynb` â€” text-mining analysis
+1. `notebook.ipynb` — collect and clean the TMDB data and build the modelling dataset
+2. `notebooks/EDA.ipynb` — exploratory analysis
+3. `notebooks/Feature_Engineering.ipynb` — structured and TF-IDF features plus baseline results
+4. `notebooks/TimeSeries.ipynb` — time-series outputs
+5. `notebooks/TextMining.ipynb` or `notebooks/Text_Mining.ipynb` — text-mining analysis
 
 `TextMining.ipynb` and `Text_Mining_Revised.ipynb` contain the focused Review 2 workflow; `Text_Mining.ipynb` is the broader text-analysis workflow that writes figures to `data/processed/`. Notebook execution order may vary depending on the current analysis branch. The dashboard expects its source CSV outputs to be present under `data/processed`, `data/ts`, and `data/text`.
 
@@ -314,7 +314,3 @@ This project was completed for **23CSE452 Business Analytics**. It covers data c
 - Movie metadata and audience metrics: [The Movie Database (TMDB)](https://www.themoviedb.org/)
 - Visual analytics: Plotly and Streamlit
 - Statistical and machine-learning analysis: pandas, NumPy, scikit-learn, XGBoost, SciPy, and statsmodels
-
-
-## Project Scope
-This project performs Business Analytics on retail data using time-series forecasting and NLP-based text mining to derive actionable insights.
