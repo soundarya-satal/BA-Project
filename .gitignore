@@ -1,4 +1,4 @@
-﻿# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -61,9 +61,9 @@ claude/
 .gemini/
 
 # Presentations, Scripts & Docs
-*presentation*
-*.pptx
-*.docx
+~$*.pptx
+~$*.docx
+!Final_Project_Presentation.pptx
 
 
 # Model artifacts

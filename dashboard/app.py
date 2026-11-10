@@ -866,7 +866,7 @@ with tabs[4]:
     ms, fo = read("ts/monthly_series.csv", ["month"]), read("ts/forecast.csv", ["month"])
     mc, se = read("ts/model_comparison.csv"), read("ts/seasonality.csv")
     gc = read("ts/genre_share_change.csv")
-    nb = "Review2_TimeSeries.ipynb"
+    nb = "notebooks/TimeSeries.ipynb"
     if need(ms, "data/ts/monthly_series.csv", nb):
         st.subheader("Trend")
         what = st.radio("Series", ["Average rating", "Average popularity"], horizontal=True)
@@ -931,7 +931,7 @@ with tabs[4]:
 
 # ================= 5. Text mining =================
 with tabs[5]:
-    nb = "TextMining.ipynb"
+    nb = "notebooks/TextMining.ipynb"
     if not need(text, "data/text/text_movie_level.csv", nb): pass
     elif ft.empty: st.warning("No movies match the current filters (text mining uses movies with 20 or more votes).")
     else:

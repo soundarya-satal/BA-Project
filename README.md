@@ -1,5 +1,7 @@
 # CinePredict: TMDB Movie Performance Analytics
 
+> **Live Deployed Dashboard:** [https://tmdb-movie-analyticss.streamlit.app/](https://tmdb-movie-analyticss.streamlit.app/)
+
 An end-to-end business analytics project that investigates which movie characteristics are associated with stronger audience ratings. The project combines TMDB data collection, data preparation, exploratory analysis, predictive modelling, time-series analysis, text mining, and an interactive Streamlit dashboard.
 
 ## Project overview
@@ -34,6 +36,8 @@ Additional findings:
 - Plot-summary text mining identifies recurring themes and terms associated with different rating groups, but text features did not improve the main predictive model.
 
 ## Interactive dashboard
+
+> **Live Application URL:** [https://tmdb-movie-analyticss.streamlit.app/](https://tmdb-movie-analyticss.streamlit.app/)
 
 The dashboard is implemented in [`dashboard/app.py`](dashboard/app.py) and reads the generated CSV files from the `data/` directory.
 
@@ -161,22 +165,21 @@ The repository contains dashboard-ready results in `data/text/`. The notebook co
 | `sentiment_by_rating.csv` / `sentiment_by_genre.csv` / `sentiment_by_year.csv` | Polarity and subjectivity summaries |
 | `lda_topic_model.pkl` | Fitted LDA model used by the dashboard |
 
-The notebook's plotting helper saves figures to `reports/figures/text/` with names including `word_share_high_vs_low.png`, `significant_terms.png`, `wordclouds_rating.png`, `wordclouds_genre.png`, `top_bigrams.png`, `topic_coherence_scan.png`, `topic_vs_rating.png`, `topic_genre_heatmap.png`, `topic_share_by_year.png`, and `sentiment_analysis.png`. The repository also contains dashboard-oriented copies or related figures under `data/processed/`, including `differential_terms.png`, `differential_bigrams.png`, `topic_coherence.png`, and `sentiment_trends.png`.
+All generated analysis figures and charts across Units 1–3 are located under `visualizations/`, including `differential_terms.png`, `differential_bigrams.png`, `topic_coherence.png`, `sentiment_trends.png`, `wordclouds_rating.png`, `wordclouds_genre.png`, and `wordclouds_decade.png`.
 
 ## Repository structure
 
 ```text
 BA-Project/
 ├── dashboard/
-│   └── app.py                         # Streamlit dashboard
+│   └── app.py                         # Streamlit interactive dashboard
 ├── data/
 │   ├── raw/
 │   │   ├── tmdb_raw.csv              # Raw collected movie records
 │   │   └── checkpoint.json            # Collection checkpoint
 │   ├── processed/
 │   │   ├── tmdb_clean.csv             # Clean analysis dataset
-│   │   ├── tmdb_model.csv             # Modelling dataset
-│   │   └── *.png                      # Analysis figures
+│   │   └── tmdb_model.csv             # Modelling dataset
 │   ├── text/
 │   │   ├── text_movie_level.csv       # Movie-level text features
 │   │   ├── topics_summary.csv         # Topic descriptions
@@ -192,13 +195,20 @@ BA-Project/
 │   ├── XGBoost_A.pkl                  # Content-only XGBoost
 │   └── XGBoost_B.pkl                  # Content + engagement XGBoost
 ├── notebooks/
-│   ├── EDA.ipynb
-│   ├── Feature_Engineering.ipynb
-│   ├── TextMining.ipynb              # Text-mining workflow
-│   └── TimeSeries.ipynb              # Time-series workflow
-├── notebook.ipynb                     # Main analysis notebook
-├── DATA_DICTIONARY.md
-├── Data Documentation Report.docx
+│   ├── EDA.ipynb                      # Unit 1: Exploratory analysis
+│   ├── Feature_Engineering.ipynb      # Unit 2: Feature engineering & baseline
+│   ├── Predictive_Modelling.ipynb     # Unit 2: Predictive modelling & evaluation
+│   ├── TimeSeries.ipynb               # Unit 3: Time-series workflow
+│   └── TextMining.ipynb               # Unit 3: Text-mining workflow
+├── visualizations/                    # Project charts across Units 1–3
+│   ├── eda_*.png                      # Unit 1: Distribution, genre, language & correlation figures
+│   ├── model_*.png                    # Unit 2: ROC curves, confusion matrices & feature importance
+│   ├── ts_*.png                       # Unit 3: Time-series trends, decomposition & forecasts
+│   └── *.png                          # Unit 3: Text-mining word clouds, topics & sentiment figures
+├── notebook.ipynb                     # Master analysis notebook
+├── DATA_DICTIONARY.md                 # Detailed data dictionary
+├── Final_Project_Report.pdf           # Final project report
+├── requirements.txt                   # Project dependencies
 └── README.md
 ```
 
@@ -226,9 +236,10 @@ pip install -r requirements.txt
 
 ## Running the project
 
-### 1. Start the dashboard
+### 1. Access or run the dashboard
 
-From the project directory:
+- **Live Deployed Version:** Access the interactive dashboard directly at [tmdb-movie-analyticss.streamlit.app](https://tmdb-movie-analyticss.streamlit.app/)
+- **Local Version:** From the project directory, run:
 
 ```bash
 streamlit run dashboard/app.py
